@@ -49,7 +49,7 @@ pipeline {
     stage('deploy-to-prod') {
       steps {
         script {
-          deployTo('PRD')
+          deployTo('PROD')
         }
       }
     }
