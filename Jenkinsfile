@@ -76,14 +76,14 @@ def buildImage() {
 def deployTo(environment) {
   echo "Deploying Python microservice to ${environment} environment..."
   pullImage("mmatovski/python-greetings-app:latest")
-  sh "docker compose stop greetings-app-${environment}"
-  sh "docker compose rm greetings-app-${environment}"
-  sh "docker compose up -d greetings-app-${environment}"
+  sh "docker compose stop greetings-app-${environment.toLowerCase()}"
+  sh "docker compose rm greetings-app-${environment.toLowerCase()}"
+  sh "docker compose up -d greetings-app-${environment.toLowerCase()}"
 }
 
 def testOn(environment) {
   echo "Testing Python microservice on ${environment} environment..."
   pullImage("mmatovski/api-tests:latest")
   // Used the python ms network
-  sh "docker run --rm -it --network=python-greetings-network mmatovski/api-tests:latest run greetings greetings_${environment} (${environment}"
+  sh "docker run --rm -it --network=python-greetings-network mmatovski/api-tests:latest run greetings greetings_${environment.toLowerCase()} (${environment}"
 }
