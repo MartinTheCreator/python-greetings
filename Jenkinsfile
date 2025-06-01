@@ -49,14 +49,14 @@ pipeline {
     stage('deploy-to-prod') {
       steps {
         script {
-          deployTo('PROD')
+          deployTo('PRD')
         }
       }
     }
     stage('tests-on-prod') {
       steps {
         script {
-          testOn('PROD')
+          testOn('PRD')
         }
       }
     }
