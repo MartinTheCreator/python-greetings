@@ -69,7 +69,7 @@ def pullImage(image) {
 
 def buildImage() {
   echo "Building an image of Python microservice has started..."
-  sh "docker build -t mmatovski/python-greetings-app:latest -f Dockerfile"
+  sh "docker build -t mmatovski/python-greetings-app:latest ."
   sh "docker push mmatovski/python-greetings-app:latest"
 }
 
