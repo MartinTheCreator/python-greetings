@@ -10,8 +10,8 @@ services:
     image: 'mmatovski/python-greetings-app:latest'
     ports:
       - "7002:3000"
-  greetings-app-prd:
-    container_name: greetings-app-prd
+  greetings-app-prod:
+    container_name: greetings-app-prod
     image: 'mmatovski/python-greetings-app:latest'
     ports:
       - "7003:3000"
