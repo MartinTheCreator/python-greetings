@@ -1,0 +1,26 @@
+services:
+  greetings-app-dev:
+    container_name: greetings-app-dev
+    # The image is pussed to my personal Docker Repo
+    image: 'mmatovski/python-greetings-app:latest'
+    ports:
+      - "7001:3000"
+    networks:
+      - python-greetings-network
+  greetings-app-stg:
+    container_name: greetings-app-stg
+    image: 'mmatovski/python-greetings-app:latest'
+    ports:
+      - "7002:3000"
+    networks:
+      - python-greetings-network
+  greetings-app-prod:
+    container_name: greetings-app-prod
+    image: 'mmatovski/python-greetings-app:latest'
+    ports:
+      - "7003:3000"
+    networks:
+      - python-greetings-network
+
+networks:
+  python-greetings-network:
