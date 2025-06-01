@@ -19,33 +19,45 @@ pipeline {
       }
     }
     stage('deploy-to-dev') {
-      script {
-        deployTo('DEV')
+      steps {
+        script {
+          deployTo('DEV')
+        }
       }
     }
     stage('tests-on-dev') {
-      script {
-        testOn('DEV')
+      steps {
+        script {
+          testOn('DEV')
+        }
       }
     }
     stage('deploy-to-stg') {
-      script {
-        deployTo('STG')
+      steps {
+        script {
+          deployTo('STG')
+        }
       }
     }
     stage('tests-on-stg') {
-      script {
-        testOn('STG')
+      steps {
+        script {
+          testOn('STG')
+        }
       }
     }
     stage('deploy-to-prod') {
-      script {
-        deployTo('PRD')
+      steps {
+        script {
+          deployTo('PRD')
+        }
       }
     }
     stage('tests-on-prod') {
-      script {
-        testOn('PRD')
+      steps {
+        script {
+          testOn('PRD')
+        }
       }
     }
   }
