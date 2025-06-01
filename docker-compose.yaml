@@ -1,7 +1,6 @@
 services:
   greetings-app-dev:
     container_name: greetings-app-dev
-    # The image is pussed to my personal Docker Repo
     image: 'mmatovski/python-greetings-app:latest'
     ports:
       - "7001:3000"
