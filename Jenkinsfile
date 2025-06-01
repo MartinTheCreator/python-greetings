@@ -76,8 +76,8 @@ def buildImage() {
 def deployTo(environment) {
   echo "Deploying Python microservice to ${environment} environment..."
   pullImage("mmatovski/python-greetings-app:latest")
-  sh "docker compose stop -f greetings-app-${environment.toLowerCase()}"
-  sh "docker compose rm greetings-app-${environment.toLowerCase()}"
+  sh "docker compose stop greetings-app-${environment.toLowerCase()}"
+  sh "docker compose rm -f greetings-app-${environment.toLowerCase()}"
   sh "docker compose up -d greetings-app-${environment.toLowerCase()}"
 }
 
