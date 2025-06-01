@@ -85,5 +85,5 @@ def testOn(environment) {
   echo "Testing Python microservice on ${environment} environment..."
   pullImage("mmatovski/api-tests:latest")
 
-  sh "docker run --rm -it --network=host mmatovski/api-tests:latest run greetings greetings_${environment.toLowerCase()}"
+  sh "docker run --rm -i --network=host mmatovski/api-tests:latest run greetings greetings_${environment.toLowerCase()}"
 }
